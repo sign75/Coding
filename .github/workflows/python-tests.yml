@@ -1,0 +1,32 @@
+name: Python Tests
+
+on: [push]
+
+jobs:
+  test-ap:
+    name: Test AP
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Run AP tests
+      run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)/src/main/python
+        python -m unittest discover -v -s src/test/python/ap -p "test_*.py"
+
+  test-codequest:
+    name: Test CodeQuest
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Run CodeQuest tests
+      run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)/src/main/python
+        python -m unittest discover -v -s src/test/python/codequest -p "test_*.py"
