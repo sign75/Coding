@@ -36,7 +36,31 @@ def collatz_length(n):
     Your program should output the length of each sequence in the following format:
     <Start Number>:<Sequence Length>
     """
-    pass
+    print(f"Calculating Collatz sequence length for: {n}")
+    x = n
+    loops = 1
+    while n != 1:
+        if n % 2 == 0:
+            n = n/2
+        else:
+            n = 3*n + 1
+        loops = loops + 1    
+    return f"{x}:{loops}" 
+
+# Add 1 every time one loop is complete
+#sequence uses modulus: if input mod 2 = 0, divide by 2, else, 3x +1
+# if the sequence reaches 0, break or something and exit loop, return the number of time the loop was completed
+ 
+
+
+
+
+
+
+
+
+
+
 
 def get_resource(relative_path):
     import os
