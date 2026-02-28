@@ -28,8 +28,25 @@ def addiply(a, b):
     """
     print(f"a: {a}")
     print(f"b: {b}")
-    return f"{a + b} {a * b}"
-    pass
+    added = a + b
+    multiplied = a * b
+    
+    return f"{added} {multiplied}"
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def get_resource(relative_path):
     """
